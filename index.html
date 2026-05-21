@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link rel="stylesheet" href="/CSS/style.css">
-<script src="/JavaScript/interact.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="./CSS/style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
   <!-- ================= NAVBAR ================= -->
@@ -22,56 +25,63 @@
           <div class="toggle-circle"></div>
         </div>
       </button>
+
       <div class="logo">Portfolio</div>
     </div>
 
     <nav class="nav-right">
       <a href="#home" class="nav-link">Home</a>
       <a href="#about" class="nav-link">About</a>
-      <div class="dropdown">
-        <a href="#skill" class="nav-link dropdown-btn">Skill</a>
-        <div class="dropdown-content">
-          <a href="#html">HTML</a>
-          <a href="#css">CSS</a>
-          <a href="#javascript">JavaScript</a>
-          <a href="#react">React</a>
-          <a href="#git">Git / GitHub</a>
-        </div>
-      </div>
+      <a href="#skill" class="nav-link">Skill</a>
       <a href="#experience" class="nav-link">Experience</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </header>
-<section class="hero">
-  <div class="hero-text">
-  <h1>Welcome to My Portfolio</h1>
-  <p class="hero-title">🚀 Frontend Web Developer</p>
-<p class="hero-description"><p class="hero-description">I create beautiful, responsive websites with modern technologies. Focused on clean code, smooth animations, and exceptional user experiences. ✨</p></p>
-  <a href="/CV/Kroch Monyvatana_CV.pdf" download class="download-btn">
-    <i class="fas fa-download"></i> Download CV
-  </a>
-  <a href="https://youtu.be/HXYZxVbWkjc?si=6pjf4wuEvYDUrHPe" target="_blank" class="video-btn">
-  ▶ Play Video
-</a>
-</div>
-<div class="hero-image">
-  <img src="/HTML/photo_2026-05-21_11-04-18.jpggit" alt="Profile Image" class="hero-img">
-</div>
-</section>
- 
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>Welcome to My Portfolio</h1>
+
+      <p class="hero-title">🚀 Frontend Web Developer</p>
+
+      <p class="hero-description">
+        I create beautiful, responsive websites with modern technologies.
+        Focused on clean code, smooth animations, and great user experience. ✨
+      </p>
+
+      <!-- CV DOWNLOAD -->
+      <a href="./CV/Kroch Monyvatana_CV.pdf" download class="download-btn">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+
+      <!-- VIDEO -->
+      <a href="https://youtu.be/HXYZxVbWkjc?si=6pjf4wuEvYDUrHPe" target="_blank" class="video-btn">
+        ▶ Play Video
+      </a>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="hero-image">
+      <img src="./photo_2026-05-21_11-04-18.jpg" alt="Profile Image" class="hero-img">
+    </div>
+
+  </section>
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer" id="contact">
-    <div class="footer-content">
-      <p>📍 Address: Phnom Penh, Cambodia</p>
-      <div class="socials">
-        <a href="#" target="_blank">LinkedIn</a>
-        <a href="#" target="_blank">Telegram</a>
-        <a href="#" target="_blank">Facebook</a>
-      </div>
+    <p>📍 Address: Phnom Penh, Cambodia</p>
+
+    <div class="socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">Telegram</a>
+      <a href="#">Facebook</a>
     </div>
   </footer>
 
-  <script src="/JavaScript/interact.js"></script>
+  <!-- JS -->
+  <script src="./JavaScript/interact.js"></script>
+
 </body>
 </html>
