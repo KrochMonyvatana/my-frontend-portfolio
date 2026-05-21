@@ -1,85 +1,3 @@
-
-
-* {
-  box-sizing: border-box;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-/* ================= RESPONSIVE SAFETY LAYER ================= */
-
-/* Prevent overflow issues globally */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Make images and media scale properly */
-img, video, canvas {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Prevent text from breaking layout */
-p, h1, h2, h3, h4, h5, h6, span {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Ensure form elements scale well */
-input, button, textarea, select {
-  max-width: 100%;
-  font: inherit;
-}
-
-/* Basic responsive container helper (only if you use it) */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* ================= RESPONSIVE BREAKPOINTS ================= */
-
-/* Tablet */
-@media (max-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-
-  .container {
-    padding: 0 12px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-
-  /* Stack flex layouts automatically if you use flex */
-  .row {
-    flex-direction: column;
-  }
-}
-/* ================= BASE ================= */
 * {
   margin: 0;
   padding: 0;
@@ -87,17 +5,21 @@ input, button, textarea, select {
   font-family: Arial, sans-serif;
 }
 
+/* ================= BASE ================= */
 html, body {
   height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-/* Light mode - shows image clearly */
+/* ================= BACKGROUND (FIXED) ================= */
 body {
-  background-image: url("./HTML/innovalabs-software-developer-6521720_1920.jpg");
+  background-image: url("HTML/innovalabs-software-developer-6521720_1920.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+
   color: #111;
   transition: 0.3s;
   display: flex;
@@ -105,15 +27,17 @@ body {
   min-height: 100vh;
 }
 
-/* Dark mode - shows image with dark overlay (NOT solid color) */
+/* DARK MODE BACKGROUND (overlay only, no broken color blocks) */
 body.dark {
-  background-image: url('/HTML/innovalabs-software-developer-6521720_1920.jpg');
+  background-image: url("HTML/innovalabs-software-developer-6521720_1920.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+
   background-color: rgba(0, 0, 0, 0.65);
   background-blend-mode: overlay;
+
   color: #f1f5f9;
 }
 
@@ -127,10 +51,8 @@ body.dark {
   position: sticky;
   top: 0;
   z-index: 100;
-  flex-shrink: 0;
 }
 
-/* LEFT SIDE */
 .nav-left {
   display: flex;
   align-items: center;
@@ -143,484 +65,109 @@ body.dark {
   color: #fff;
 }
 
-/* ========== NIGHT MODE TOGGLE ========== */
-.theme-btn {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  border: none;
-  padding: 6px 16px 6px 20px;
-  border-radius: 60px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-.toggle-text {
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: white;
-  letter-spacing: 0.3px;
-}
-
-.toggle-slider {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-}
-
-.toggle-icon {
-  font-size: 13px;
-  z-index: 2;
-  transition: all 0.2s;
-}
-
-.sun { opacity: 1; }
-.moon { opacity: 0.4; }
-
-.toggle-circle {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background: white;
-  border-radius: 50%;
-  left: 3px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-/* Dark mode toggle */
-body.dark .theme-btn {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
-}
-
-body.dark .toggle-text { color: #e0e7ff; }
-body.dark .toggle-slider { background: rgba(0, 0, 0, 0.3); }
-body.dark .toggle-circle { transform: translateX(30px); background: #facc15; }
-body.dark .sun { opacity: 0.4; }
-body.dark .moon { opacity: 1; color: #facc15; }
-
-.theme-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
-.theme-btn:active { transform: translateY(1px); }
-
-/* ================= RIGHT MENU ================= */
 .nav-right {
   display: flex;
   gap: 25px;
-  align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
   color: #e2e8f0;
   font-weight: 500;
-  transition: color 0.3s ease;
-  position: relative;
-  display: inline-block;
-  padding: 8px 0;
 }
 
 .nav-link:hover {
   color: #38bdf8;
-  transform: none;
 }
 
-/* Flash effect - yellow when clicked */
-.nav-link.flash {
-  color: #facc15 !important;
-}
-
-/* ================= MAIN CONTENT ================= */
-.main-content {
-  flex: 1;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* ================= HERO SECTION ================= */
+/* ================= HERO ================= */
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 80px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 60px 20px;
   flex-wrap: wrap;
 }
 
 .hero-text {
   flex: 1;
-  text-align: left;
   min-width: 280px;
 }
-
-
 
 .hero-image {
   flex: 1;
-  text-align: center;
   min-width: 280px;
+  text-align: center;
 }
 
 .hero-img {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #38bdf8;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  animation: float 3s infinite;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+/* ================= TEXT ================= */
+.hero-text h1 {
+  font-size: 2rem;
+  color: white;
 }
 
 .hero-title {
-  font-size: 1.3rem;
-  color: #3b82f6;
-  margin-bottom: 15px;
-  font-weight: 600;
+  color: #38bdf8;
+  margin: 10px 0;
 }
 
 .hero-description {
-  font-size: 1rem;
-  color: #334155;
-  margin-bottom: 25px;
+  color: #e2e8f0;
+  margin-bottom: 20px;
   line-height: 1.6;
 }
 
-/* Dark mode text colors */
-body.dark .hero-text h1 {
-  color: white;
-}
-
-body.dark .hero-description {
-  color: #cbd5e1;
-}
-
-/* ================= DOWNLOAD CV BUTTON ================= */
-.download-btn {
+/* ================= BUTTONS ================= */
+.download-btn,
+.video-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: #22c55e;
-  color: white;
-  padding: 12px 28px;
+  padding: 12px 24px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
+  margin-right: 10px;
 }
 
-.download-btn:hover {
-  background: #16a34a;
-  transform: translateY(-2px);
-}
-
-/* Dark mode button */
-body.dark .download-btn {
+.download-btn {
   background: #22c55e;
+  color: white;
+}
+
+.video-btn {
+  background: #ef4444;
+  color: white;
 }
 
 /* ================= FOOTER ================= */
 .footer {
+  margin-top: auto;
   background: #1e293b;
   color: white;
-  padding: 25px;
   text-align: center;
-  flex-shrink: 0;
-  margin-top: auto;
+  padding: 20px;
 }
 
-.socials { margin-top: 10px; }
-.socials a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #38bdf8;
-  transition: 0.3s;
-}
-.socials a:hover { color: #facc15; }
-
-body.dark .navbar,
-body.dark .footer { background: #020617; }
-
-section { scroll-margin-top: 80px; }
-
-/* ================= SOCIAL MEDIA LOGOS ================= */
-.socials a:first-child::before {
-  content: "\f08c";
-  font-family: "Font Awesome 6 Brands";
-  margin-right: 8px;
-  font-size: 18px;
-  color: #0077b5;
-}
-
-.socials a:nth-child(2)::before {
-  content: "\f2c6";
-  font-family: "Font Awesome 6 Brands";
-  margin-right: 8px;
-  font-size: 18px;
-  color: #0088cc;
-}
-
-.socials a:last-child::before {
-  content: "\f09a";
-  font-family: "Font Awesome 6 Brands";
-  margin-right: 8px;
-  font-size: 18px;
-  color: #1877f2;
-}
-
-/* ================= DROPDOWN MENU - HOVER ONLY ================= */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  position: absolute;
-  background-image: url('https://miro.medium.com/1*jXusXvCfxECPU_Jh9S_E3w.jpeg');
-  background-size: cover;
-  background-position: center;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 12px;
-  margin-top: 10px;
-  top: 100%;
-  left: 0;
-  overflow: hidden;
-  
-  /* Hidden by default */
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: max-height 0.8s ease-out, opacity 0.6s ease, visibility 0.6s;
-}
-
-/* SHOW ON HOVER */
-.dropdown:hover .dropdown-content {
-  max-height: 400px;
-  opacity: 1;
-  visibility: visible;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: 0.3s;
-  background: rgba(0, 0, 0, 0.65);
-  margin: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dropdown-content a:last-child { border-bottom: none; }
-.dropdown-content a:hover { background: rgba(100, 100, 100, 0.8); color: white; }
-
-/* Responsive */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
   }
-  
-  .hero-text {
-    text-align: center;
-  }
-  
-  
+
   .hero-img {
     width: 250px;
     height: 250px;
   }
-}
-/* Light mode text colors */
-
-
-
-
-/* Dark mode text colors */
-body.dark .hero-text h1 {
-  color: #ffffff;
-}
-
-body.dark .hero-title {
-  color: #60a5fa;
-}
-
-body.dark .hero-description {
-  color: #cbd5e1;
-}
-/* Make text white in BOTH modes */
-.hero-text h1,
-.hero-title,
-.hero-description {
-  color: white !important;
-}
-
-/* For light mode - make background darker so white text shows */
-body {
-  background-color: #0f172a;
-}
-
-/* For light mode image overlay */
-body:not(.dark) {
-  background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.hero-title {
-  color: #38bdf8 !important;
-}
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-/* ===== LIGHT MODE ===== */
-.navbar{
-    background:#e2e8f0;
-    transition:0.4s;
-}
-
-.footer{
-    background:#e2e8f0;
-    color:#111;
-    transition:0.4s;
-}
-
-.nav-link{
-    color:#111;
-}
-
-/* ===== DARK MODE ===== */
-body.dark .navbar{
-    background:#000;
-}
-
-body.dark .footer{
-    background:#000;
-    color:white;
-}
-
-body.dark .nav-link{
-    color:white;
-}
-
-
-/* DEFAULT (LIGHT MODE) */
-.hero-text h1 {
-  color: #1e293b;
-}
-
-.hero-title {
-  color: #38bdf8;
-}
-
-.hero-description {
-  color: #334155;
-}
-
-/* DARK MODE */
-body.dark .hero-text h1 {
-  color: #ffffff;
-}
-
-body.dark .hero-title {
-  color: #60a5fa;
-}
-
-body.dark .hero-description {
-  color: #cbd5e1;
-}
-/* LIGHT MODE */
-body:not(.dark) .hero-text h1 {
-  color: #1e293b;
-}
-
-body:not(.dark) .hero-title {
-  color: #38bdf8;
-}
-
-body:not(.dark) .hero-description {
-  color: #334155;
-}
-
-/* DARK MODE */
-body.dark .hero-text h1 {
-  color: #ffffff;
-}
-
-body.dark .hero-title {
-  color: #60a5fa;
-}
-
-body.dark .hero-description {
-  color: #cbd5e1;
-}
-/* LIGHT MODE */
-.logo {
-  color: #000;
-}
-
-/* DARK MODE */
-body.dark .logo {
-  color: #fff;
-}
-.video-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  background: #ef4444;
-  color: white;
-
-  padding: 12px 28px;
-  border-radius: 50px;
-
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-
-  margin-left: 45px;
-  transition: 0.3s ease;
-}
-
-.video-btn:hover {
-  background: #dc2626;
-  transform: translateY(-2px);
 }
