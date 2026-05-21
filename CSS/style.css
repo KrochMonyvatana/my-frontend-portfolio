@@ -93,7 +93,7 @@ html, body {
 
 /* Light mode - shows image clearly */
 body {
-  background-image: url('/HTML/innovalabs-software-developer-6521720_1920.jpg');
+  background-image: url("./HTML/innovalabs-software-developer-6521720_1920.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
